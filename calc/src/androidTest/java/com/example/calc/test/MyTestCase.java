@@ -30,22 +30,20 @@ public class MyTestCase extends ActivityInstrumentationTestCase2<MainActivity> {
 		etext2 = (EditText) actividad.findViewById(R.id.editText2);
 		suma = (Button) actividad.findViewById(R.id.button1);
 		mul = (Button) actividad.findViewById(R.id.button2);
-		// MainActivity actividad = getActivity();
-		// suma = (Button) actividad.findViewById(R.id.button1);
-		// suma.requestFocus();
-		// suma.performClick();
+
 	}
 
 	protected void tearDown() throws Exception {
 		super.tearDown();
 	}
 
-	private static final String NUMBER_1 = "2";
-	private static final String NUMBER_2 = "3";
-	private static final String ADD_RESULT = "5";
-	private static final String MUL_RESULT = "6";
+	private static final String NUMBER_1 = "1 0 1";
+	private static final String NUMBER_2 = "2";
+	private static final String ADD_RESULT = "103";
+	private static final String MUL_RESULT = "202";
 
 	public void testAddValues() {
+        //on value 1 entry
 		TouchUtils.tapView(this, etext1);
 		sendKeys(NUMBER_1);
 		// now on value2 entry
@@ -53,14 +51,14 @@ public class MyTestCase extends ActivityInstrumentationTestCase2<MainActivity> {
 		sendKeys(NUMBER_2);
 		// now on Add button
 		TouchUtils.clickView(this, suma);
-		// sendKeys("ENTER");
-		// get result
+
 		String mathResult1 = etiqueta.getText().toString();
-		// Log.d("JUNIT", mathResult1);
-		assertTrue("Add result should be 86", mathResult1.equals(ADD_RESULT));
+
+		assertTrue("Add result should be...", mathResult1.equals(ADD_RESULT));
 	}
 
 	public void testMultiplyValues() {
+		//on value 1 entry
 		TouchUtils.tapView(this, etext1);
 		sendKeys(NUMBER_1);
 		// now on value2 entry
@@ -68,11 +66,9 @@ public class MyTestCase extends ActivityInstrumentationTestCase2<MainActivity> {
 		sendKeys(NUMBER_2);
 		// now on Multiply button
 		TouchUtils.clickView(this, mul);
-		// sendKeys(KeyEvent.KEYCODE_DPAD_RIGHT);
-		// sendKeys("ENTER");
-		// get result
+
 		String mathResult2 = etiqueta.getText().toString();
-		assertTrue("Multiply result should be 888",
+		assertTrue("Multiply result should be...",
 				mathResult2.equals(MUL_RESULT));
 	}
 
