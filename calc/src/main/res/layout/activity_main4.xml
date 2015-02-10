@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <GridLayout
+        android:id="@+id/GridLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:columnCount="8"
+        android:orientation="vertical"
+        >
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:ems="10"
+            android:inputType="number" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:ems="10"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:background="@drawable/add" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:background="@drawable/multiply"
+            />
+    </GridLayout>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/GridLayout1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="#999"
+                android:textColor="#fff"
+                android:textSize="48sp"
+                android:text="Result" />
+
+</RelativeLayout>
